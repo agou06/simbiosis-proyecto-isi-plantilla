@@ -223,25 +223,47 @@ Los apartados 6.1 y 6.2 corresponden a las descripciones detalladas de UC-05 y U
 
 ### 6.1 Descripción detallada UC-05 — Actualizar perfil
 
-**Identificador y nombre del caso de uso:** [Indica el caso.]
+**Identificador y nombre del caso de uso:** UC-05 · Actualizar perfil
+**Objetivo:** El usuario podrá actualizar su propio perfil y conservar los cambios.
+**Participantes:** Usuario registrado
+**Precondiciones:** El usuario ya tiene una cuenta activa y una sesión iniciada.
+**Inicio:** El usuario desea actualizar su propio perfil
+**Escenario principal de éxito:**
+  1. El usuario entra a la opción de actualizar su perfil
+  2. El sistema le muestra su nombre completo, el teléfono, la dirección postal y las preferencias dietéticas.
+  3. El usuario solicita modificar los datos de su perfil
+  4. El usuario modifica los datos y guarda los cambios realizados.
+  5. El sistema valida si los cambios son correctos y los actualiza el perfil.
+  6. El sistema marca por pantalla que los cambios se han realizado.
+  7. Fin del caso de uso
+**Extensiones (flujos alternativos):**
+5a. Nombre completo o teléfono vacío o incorrecto
+1. El sistema avisa por pantalla de que el nombre o el teléfono están incorrectos y los vuelve a solicitar
+2. El usuario introduce nuevamente los datos
+3. Vuelta al paso 5.
 
-**Objetivo:** [Explica qué resultado pretende obtener el participante.]
+6.a. El sistema no puede guardar:
+1. El sistema informa de que la actualización no se ha completado.
+2. Los datos guardados permanecen sin cambios. Se conservan los valores introducidos.
+3. El usuario solicita reintentar el guardado.
+4. El flujo vuelve al paso 4.
 
-**Participantes:** [Indica el actor principal y los actores de apoyo, si los hay.]
+**Postcondiciones:**
+Con éxito:  
+  El perfil contiene los cambios guardados y el usuario recibe la confirmación.
+  El alias y el correo electrónico mantienen sus valores.
+Sin éxito o con cancelación: 
+  El perfil conserva los valores anteriores.
+  No queda una actualización parcial.
 
-**Precondiciones:** [Indica qué se da por cumplido al comenzar. Las comprobaciones que realiza el sistema pertenecen al flujo.]
+**Reglas y NFR pertinentes:** 
+UR-03 y FR-019.
+Acta de UC-05, apartado 2.
+NFR-010, ya recogido en el modelo común.
+No se requiere diseñar pruebas de accesibilidad durante esta práctica.
 
-**Inicio:** [Indica qué acción o suceso inicia el caso.]
-
-**Escenario principal de éxito:** [Describe la secuencia entre los participantes y el sistema.]
-
-**Extensiones (flujos alternativos):** [Vincula cada variación a un paso. Indica cómo continúa o termina.]
-
-**Postcondiciones:** [Indica qué queda establecido con éxito y qué se conserva o cambia si el caso termina sin éxito o se cancela. Una consulta no requiere modificar datos para alcanzar su objetivo.]
-
-**Reglas y NFR pertinentes:** [Remite a los requisitos y actas que condicionan el comportamiento.]
-
-**Preguntas abiertas:** [Registra solo las cuestiones necesarias que las fuentes no resuelvan. Si no hay preguntas para el alcance descrito, indícalo.]
+**Preguntas abiertas:** 
+No se requieren preguntas sobre el comportamiento cubierto por el acta.
 
 ### 6.2 Descripción detallada UC-21 — Buscar recetas
 
