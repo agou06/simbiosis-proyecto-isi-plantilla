@@ -241,7 +241,6 @@ Los apartados 6.1 y 6.2 corresponden a las descripciones detalladas de UC-05 y U
 1. El sistema avisa por pantalla de que el nombre o el teléfono están incorrectos y los vuelve a solicitar
 2. El usuario introduce nuevamente los datos
 3. Vuelta al paso 5.
-
 6.a. El sistema no puede guardar:
 1. El sistema informa de que la actualización no se ha completado.
 2. Los datos guardados permanecen sin cambios. Se conservan los valores introducidos.
@@ -267,17 +266,31 @@ No se requieren preguntas sobre el comportamiento cubierto por el acta.
 
 ### 6.2 Descripción detallada UC-21 — Buscar recetas
 
-**Identificador y nombre del caso de uso:** [Indica el caso.]
+**Identificador y nombre del caso de uso:** UC-21 — Buscar recetas
 
-**Objetivo:** [Explica qué resultado pretende obtener el participante.]
+**Objetivo:** Permitir a la persona usuaria localizar recetas publicadas y validadas que cumplan los criterios de búsqueda seleccionados y consultar el detalle de una receta concreta.
 
-**Participantes:** [Indica el actor principal y los actores de apoyo, si los hay.]
+**Participantes:** 
+	·Actor principal: Persona usuaria registrada, que busca recetas y consulta su detalle.
+	·Actor de apoyo: Analista, que participa en la simulación del caso de uso.
 
 **Precondiciones:** [Indica qué se da por cumplido al comenzar. Las comprobaciones que realiza el sistema pertenecen al flujo.]
 
-**Inicio:** [Indica qué acción o suceso inicia el caso.]
+**Inicio:** La persona usuaria inicia la búsqueda de recetas desde la aplicación.
 
-**Escenario principal de éxito:** [Describe la secuencia entre los participantes y el sistema.]
+**Escenario principal de éxito:** 
+1. La persona usuaria accede a la funcionalidad de búsqueda de recetas.
+2. El sistema muestra los criterios de búsqueda disponibles 
+3. La persona usuaria selecciona uno o varios ingredientes que desea incluir, uno o varios ingredientes que desea excluir o introduce una palabra o frase para buscar por texto.
+4. La persona usuaria ejecuta la búsqueda.
+5. El sistema comprueba que se ha indicado al menos un criterio y que no existen ingredientes seleccionados simultáneamente para incluir y excluir.
+6. El sistema busca recetas publicadas y validadas que cumplan todos los criterios indicados. 
+7. El sistema muestra las recetas encontradas, ordenadas por fecha de publicación de más reciente a más antigua. 
+8. La persona usuaria selecciona una receta de los resultados.
+9. El sistema muestra la receta con título, imagen, calificación promedio y descripción breve.
+10. La persona usuaria consulta la información de la receta y puede volver a los resultados de búsqueda.
+11. El sistema conserva los criterios de la última búsqueda y el orden de los resultados.
+12. Fin del caso del uso
 
 **Extensiones (flujos alternativos):** [Vincula cada variación a un paso. Indica cómo continúa o termina.]
 
