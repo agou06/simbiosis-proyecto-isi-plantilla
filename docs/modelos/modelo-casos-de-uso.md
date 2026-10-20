@@ -236,12 +236,13 @@ Los apartados 6.1 y 6.2 corresponden a las descripciones detalladas de UC-05 y U
   5. El sistema valida si los cambios son correctos y los actualiza el perfil.
   6. El sistema marca por pantalla que los cambios se han realizado.
   7. Fin del caso de uso
+
 **Extensiones (flujos alternativos):**
-5a. Nombre completo o teléfono vacío o incorrecto
+	5a. Nombre completo o teléfono vacío o incorrecto
 1. El sistema avisa por pantalla de que el nombre o el teléfono están incorrectos y los vuelve a solicitar
 2. El usuario introduce nuevamente los datos
 3. Vuelta al paso 5.
-6.a. El sistema no puede guardar:
+	6.a. El sistema no puede guardar:
 1. El sistema informa de que la actualización no se ha completado.
 2. Los datos guardados permanecen sin cambios. Se conservan los valores introducidos.
 3. El usuario solicita reintentar el guardado.
@@ -292,13 +293,61 @@ No se requieren preguntas sobre el comportamiento cubierto por el acta.
 11. El sistema conserva los criterios de la última búsqueda y el orden de los resultados.
 12. Fin del caso del uso
 
-**Extensiones (flujos alternativos):** [Vincula cada variación a un paso. Indica cómo continúa o termina.]
+**Extensiones (flujos alternativos):**
+	3.a. El usuario busca mediante una palabra o frase:
+1. El usuario introduce el texto de búsqueda en lugar de seleccionar un ingrediente.
+2. El flujo continúa en el paso 4.
+3. En el paso 6, el sistema aplica la regla de coincidencia del texto establecida en el acta.
+	3.b. El usuario excluye ingredientes:
+1. El usuario selecciona los ingredientes que desea excluir.
+2. El flujo continúa en el paso 4.
+3. En el paso 6, el sistema aplica las exclusiones a los resultados.
+   	3.c. El usuario combina criterios:
+1. El usuario indica varios criterios de los contemplados en el acta.
+2. El flujo continúa en el paso 4.
+3. En el paso 6, el sistema obtiene las recetas que cumplen conjuntamente esos criterios.
+   5.a. No se ha indicado ningún criterio:
+1. El sistema solicita al menos un criterio y no ejecuta la búsqueda.
+2. El flujo vuelve al paso 3.
+   5.b. Un ingrediente se ha incluido y excluido a la vez:
+1. El sistema señala el conflicto y no ejecuta la búsqueda.
+2. El sistema conserva los criterios.
+3. El usuario corrige la selección.
+4. El flujo vuelve al paso 4.
+   6.a. La búsqueda no obtiene resultados:
+1. El sistema informa de que no hay resultados para los criterios indicados.
+2. El sistema conserva los criterios y presenta las correcciones o alternativas disponibles, conforme al acta.
+3. El usuario elige una sugerencia.
+4. El sistema presenta los criterios propuestos y mantiene las exclusiones.
+5. El usuario decide ejecutar la nueva búsqueda.
+6. El flujo vuelve al paso 5.
+   	6.b. El sistema no puede completar la búsqueda:
+1. El sistema informa del fallo y conserva los criterios.
+2. El usuario informa del fallo y conserva los criterios.
+3. El flujo vuelve al paso 5.
+   	7.a. Falta una imagen o no hay valoraciones:
+1. El sistema presenta la vista previa con las indicaciones previstas en el acta para los datos ausentes.
+2. El flujo continúa en el paso 8.
+   9.a.El usuario vuelve a los resultados:
+1. El sistema presenta los resultados de la última búsqueda y conserva sus criterios y su orden.
+2. El usuario puede seleccionar otra receta y continuar en el paso 8, o modificar los criterios y volver al paso 3.
+   	9.b. El sistema no puede cargar el detalle:
+1. El sistema informa del fallo y conserva los criterios de la búsqueda.
+2. El usuario solicita reintentar la consulta.
+3. El sistema vuelve a intentar el paso 9.
 
-**Postcondiciones:** [Indica qué queda establecido con éxito y qué se conserva o cambia si el caso termina sin éxito o se cancela. Una consulta no requiere modificar datos para alcanzar su objetivo.]
+**Postcondiciones:** 
+Con éxito: 
+	El usuario ha consultado los resultados de una búsqueda y el detalle de una receta seleccionada.
+Sin consultar una receta: 
+	El usuario conoce la ausencia de coincidencias o el problema que impidió completar la consulta.
+	Esta descripción no incorpora el registro del historial ni otras modificaciones de datos.
 
-**Reglas y NFR pertinentes:** [Remite a los requisitos y actas que condicionan el comportamiento.]
+**Reglas y NFR pertinentes:** 
 
-**Preguntas abiertas:** [Registra solo las cuestiones necesarias que las fuentes no resuelvan. Si no hay preguntas para el alcance descrito, indícalo.]
+
+**Preguntas abiertas:** 
+Con la información dada no hace falta hacer preguntas abiertas que sean necesarias para el comportamiento funcional del caso del uso
 
 ## 7 Continuidad entre iteraciones
 
